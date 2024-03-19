@@ -1,0 +1,27 @@
+{% extends 'head.html.twig' %} 
+
+
+{% block title %}NetHub | Accueil{% endblock %}
+{% block stylesheets %} 
+    <link rel="stylesheet" href="{{ asset('stylesheets/accueil.css') }}" type="text/css">
+{% endblock %}
+
+
+{% block body %}
+  <div class="tete">
+    <h1>Bienvenue sur NetHub</h1>
+    <p>Rejoins la communauté ! </p>
+    <a href="{{ path('inscription') }}" class="cta-button">S'inscrire</a>
+  </div>
+  <div class="container">
+    <h2>Qu'est-ce que NetHub ?</h2>
+    <p>NetHub c'est un lieu où les esprits créatifs et les passionnés se réunissent pour échanger des idées, résoudre des problèmes et se perfectionner.</p>
+    <p>Notre communauté dynamique offre un espace sûr et convivial pour discuter de tout ce qui touche à l'informatique, que ce soit du développement de logiciels à la configuration matérielle.</p>
+    <p>Rejoignez-nous aujourd'hui et plongez au cœur de l'univers fascinant de l'informatique, où chaque interaction est une opportunité d'apprendre et de grandir. NetHub va au-delà d'un simple forum informatique, c'est une communauté qui vous accompagne dans votre parcours vers l'excellence informatique.</p>
+    <h2>Pourquoi choisir NetHub ?</h2>
+    <p>NetHub c'est avant tout un espace d'entraide où chaque membre peut poser ses questions, partager ses défis et bénéficier de l'expérience collective.</p>
+    <p>Que vous soyez novice ou expert, NetHub vous offre un environnement inclusif pour approfondir vos connaissances et développer vos compétences en informatique.</p>
+    <p>Rejoignez-nous dès aujourd'hui et découvrez une communauté qui partage votre passion et est prête à vous soutenir à chaque étape de votre parcours ! 🗣💬✨</p>
+  </div>
+
+{% endblock %}

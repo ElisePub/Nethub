@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(51,51,51,.9);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.container-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Ajout pour positionner le bouton */
+}
+
+h2 {
+    margin: 0; /* Supprime la marge par défaut du titre h2 */
+    text-align: center; /* Centre le texte */
+    flex-grow: 1; /* Permet au titre de prendre l'espace disponible */
+    margin-bottom: 25px;
+    margin-top: 17px;
+}
+
+.close {
+    padding: 12px;
+    border-radius: 13px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: url('/images/icone-close.png');
+    background-size: cover; /* Ajuste la taille de l'image pour remplir le bouton */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    background-color: transparent; /* Supprime la couleur de fond */
+    border: none; /* Supprime les bords du bouton */
+    cursor: pointer;
+}
+
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+.button-submit {
+    background-color: rgba(52, 29, 117, 0.885); 
+    border-color: rgba(27, 13, 67, 0.892);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button-submit:hover {
+    background-color: rgba(26, 14, 59, 0.892); 
+    border-color: rgba(22, 11, 52, 0.892);
+}

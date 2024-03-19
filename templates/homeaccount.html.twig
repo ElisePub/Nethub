@@ -1,0 +1,79 @@
+{% extends 'head.html.twig' %}
+{% block title %} NetHub | HomePage {% endblock %}
+{% block stylesheets %} <link rel="stylesheet" href="{{ asset('stylesheets/home.css') }}" type="text/css">{% endblock %}
+
+{% block body %}
+<div class="tete">
+    <h1 class="display-1">NetHub</h1>
+    <p class="lead">A Community for Coders</p>
+</div>
+
+<div class="over-row">
+    <div class="area">
+        <div style="box-shadow: 2px 3px 9px 4px rgba(0,0,0,0.04);">
+            <div class="q-container">
+                <div class="row">
+                    <div class="profile">
+                        <img class="profilpic" src="{{ asset('images/' ~ utilisateur.pic) }}" width="100" height="100">
+                    </div>
+                    <form action="{{ path('add_message', {'user': utilisateur.id}) }}" method="post" class="contenu">
+                        <input class="nv-titre" type="text" id="titre" name="titre" placeholder="titre">
+                        <div class="q-display">
+                            <textarea id="message" name="message" rows="5" cols="95"></textarea>
+                        </div>
+                        <div class="bouton">
+                            <button class="btn-question" id="btn-subject" type="submit ">Démarrer un sujet</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% for i in 0..4 %}
+    <br>
+    {% endfor %}
+
+    {% for message in messages|reverse %}
+    <div class="topic">
+        <div style="box-shadow: 2px 3px 9px 4px rgba(0,0,0,0.04);">
+            <div class="q-container">
+                <div class="row">
+                    <div class="profile">
+                        <img class="profilpic" src="{{ asset('images/' ~ message.lUtilisateur.pic) }}" width="100" height="100">
+                        <div class="d-block mt-3 vote-arrows">
+                            <a class="vote-up" href="#"><i class="far fa-arrow-alt-circle-up"></i></a>
+                            <a class="vote-down" href="#"><i class="far fa-arrow-alt-circle-down"></i></a>
+                        </div>
+                    </div>
+                    <div class="contenu">
+                        <div class="top-contenu">
+                            <a class="titre" href="#"><h2>{{message.titre}}</h2></a>
+                            <div class="delete-pic"> 
+                                {% if utilisateur.id == message.lUtilisateur.id %}
+                                    <img src="{{ asset('images/poubelle3.png') }}" width="60" height="60">
+                                {% endif %}
+                            </div>
+                            
+                        </div>
+                        <div class="q-display">
+                            <i class="fa fa-quote-left mr-3"></i>
+                            <p class="d-inline">{{ message.contenu }}</p>
+                            <p class="pt-4"><strong>-- {{ message.lUtilisateur.nom }}</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="answer-link" href="#" style="color: #fff;">
+                    <div class="q-display-response">
+                        {{ message.reponses }} reponses
+                    </div>
+                </a>
+        </div>
+    </div>
+    {% for i in 0..2 %}
+    <br>
+    {% endfor %}
+    {% endfor %}
+</div>
+{% endblock %}
